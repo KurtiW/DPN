@@ -5,17 +5,15 @@
 	{
 		$query = "SELECT * FROM dpn.messages where `chat_ID` = ".$_GET['id']." ORDER BY `TIME` DESC;";
 
-	}
-
-	
-	$result = mysqli_query($con, $query);
+		$result = mysqli_query($con, $query);
 
 
 
-	while($row = mysqli_fetch_row($result))
-	{
+		while($row = mysqli_fetch_row($result))
+		{
 		
-		echo $row[0] . "|" . $row[1] . "|" . $row[3] . "|" ."<br>";
+			echo $row[0] . "|" . $row[1] . "|" . $row[3] . "|" ."<br>";
+		}
 	}
 
 ?>
