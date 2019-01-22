@@ -3,7 +3,7 @@
 
 	if(isset($_GET['chat_id']) && isset($_GET['user_id']))
 	{
-		$query = "INSERT INTO dpn.chats (`ID`,`user_ID`) VALUES ('".$_GET['chat_id']."','".$_GET['user_id']."');";
+		$query = "INSERT INTO dpn.chats (`ID`,`user_ID`,`VALID`) VALUES ('".$_GET['chat_id']."','".$_GET['user_id']."','1');";
 		$result = mysqli_query($con, $query);	
 
 
@@ -11,8 +11,19 @@
 	}
 	else if(isset($_GET['user_id']))
 	{
-		echo mysqli_insert_id($con);
-		$query = "INSERT INTO dpn.chats (`ID`,`user_ID`,`VALID`) VALUES ('".mysqli_insert_id($con)."','".$_GET['user_id']."','1');";
+		
+		$query = "SELECT * FROM dpn.chats ORDER BY `ID` DESC";
+				$result = mysqli_query($con, $query);	
+
+		while($row = mysqli_fetch_row($result))
+		{
+		
+			$id = $row[0] + 1;
+			break;
+		}
+
+
+		$query = "INSERT INTO dpn.chats (`ID`,`user_ID`,`VALID`) VALUES ('". $id."','".$_GET['user_id']."','1');";
 		$result = mysqli_query($con, $query);	
 	}
 
