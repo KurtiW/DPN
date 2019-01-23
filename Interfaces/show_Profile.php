@@ -6,12 +6,16 @@
 		$query = "SELECT * FROM dpn.user where `NAME` = ".$_GET['name'].";";
 
 	}
-	
-	if(isset($_GET['id']))
+	else if(isset($_GET['id']))
 	{
 		$query = "SELECT * FROM dpn.user where `ID` = ".$_GET['id'].";";
 
 	}
+	else 
+	{
+		exit;
+	}
+
 
 	
 	$result = mysqli_query($con, $query);
