@@ -6,17 +6,15 @@
 		$query = "SELECT * FROM dpn.chats where `user_ID` = ".$_GET['id'].";";
 
 	
+		$result = mysqli_query($con, $query);
 
-	
-	$result = mysqli_query($con, $query);
+		$id;
 
-	$id;
-
-	while($row = mysqli_fetch_row($result))
-	{
-		$id = $row[0];
-		echo $row[0] . "<br>";
-	}
+		while($row = mysqli_fetch_row($result))
+		{
+			$id = $row[0];
+			echo $row[0] . "<br>";
+		}
 	}
 
 ?>
