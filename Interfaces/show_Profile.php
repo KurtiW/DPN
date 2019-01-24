@@ -25,7 +25,7 @@
 	while($row = mysqli_fetch_row($result))
 	{
 		$id = $row[0];
-		echo $row[0] ."|" .$row[1] . "<br>";
+		echo $row[0] ."|" .$row[1] ."|".$row[2] . "|";
 	}
 
 
@@ -44,7 +44,7 @@
 		$result_ = mysqli_query($con, $query_);
 		while($row_ = mysqli_fetch_row($result_))
 		{
-			echo $row_[1] . "<br>";
+			echo $row_[1] . "|";
 		}
 	}
 

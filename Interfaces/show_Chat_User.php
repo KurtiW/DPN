@@ -15,7 +15,16 @@
 	while($row = mysqli_fetch_row($result))
 	{
 		
-		echo $row[1] . "|" ."<br>";
+		echo $row[1] . "|" ;
+
+		$query_ = "SELECT * FROM dpn.user where `ID` = ".$row[1].";";
+
+
+		$result_ = mysqli_query($con, $query_);
+		while($row_ = mysqli_fetch_row($result_))
+		{
+			echo $row_[1] . ";";
+		}
 	}
 
 ?>

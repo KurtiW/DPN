@@ -13,7 +13,7 @@
 		while($row = mysqli_fetch_row($result))
 		{
 			$id = $row[0];
-			echo $row[0] . "<br>";
+			echo $row[0] . "|";
 		}
 	}
 
