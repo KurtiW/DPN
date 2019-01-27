@@ -3,7 +3,7 @@
 
 	if(isset($_GET['id']))
 	{
-		$query = "SELECT * FROM dpn.chats where `ID` = ".$_GET['id'].";";
+		$query = "SELECT * FROM dpn.chat_user where `chats_id` = ".$_GET['id'].";";
 
 	}
 

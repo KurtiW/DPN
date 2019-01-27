@@ -3,7 +3,7 @@
 
 	if(isset($_GET['id']))
 	{
-		$query = "SELECT * FROM dpn.chat_user where `user_ID` = '".$_GET['id']."' and `VALID` = '1';";
+		$query = "SELECT * FROM dpn.chat_user where `user_ID` = '".$_GET['id']."' and `VALID` = '0';";
 
 	
 		$result = mysqli_query($con, $query);
